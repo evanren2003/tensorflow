@@ -88,6 +88,8 @@ print("[INFO] Loading Traning and Test Datasets.", file=fout)
 # Convert from integers 0-255 to decimals 0-1.
 trainX = trainX.astype("float") / 255.0
 testX = testX.astype("float") / 255.0
+trainX = trainX.reshape(-1,28,28,1)
+testX = testX.reshape(-1,28,28,1)
 
 # Convert labels from integers to vectors.
 lb = preprocessing.LabelBinarizer()
